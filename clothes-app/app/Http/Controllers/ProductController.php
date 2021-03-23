@@ -12,4 +12,10 @@ class ProductController extends Controller
       return view('product.index')
         ->with('products',Product::get());
     }
+
+    public function show()
+    {
+      return viex('product.show')
+       ->with('products',Product::find($id));
+    }
 }
