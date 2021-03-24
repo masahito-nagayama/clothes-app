@@ -13,9 +13,9 @@ class ProductController extends Controller
         ->with('products',Product::get());
     }
 
-    public function show()
+    public function show($id)
     {
-      return viex('product.show')
-       ->with('products',Product::find($id));
+      return view('product.show')
+       ->with('product',Product::find($id));
     }
 }
