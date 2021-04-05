@@ -6,12 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class LineItem extends Model
 {
-    //
-    public function carts()
-    {
-      return $this->belongsToMany(
-        Product::class,
-        'line_items',
-      )->withPivot(['id', 'quantity']);
-    }
+  protected $fillable = ['cart_id', 'product_id', 'quantity'];
 }
