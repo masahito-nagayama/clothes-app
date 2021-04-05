@@ -3,7 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
-  use illuminate\Support\Facades\Session;
+  use Illuminate\Support\Facades\Session;
   use App\Cart;
 
 class CartSession
@@ -17,7 +17,7 @@ class CartSession
      */
     public function handle($request, Closure $next)
     {
-      if(!Session::has('cart')) {
+      if (!Session::has('cart')) {
         $cart = Cart::create();
         Session::put('cart', $cart->id);
       }
